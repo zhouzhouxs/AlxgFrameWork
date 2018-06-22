@@ -37,7 +37,7 @@ class Session
         if ($this->session_auto_start) {
             return session_id();
         }
-        if ($sessino_id) {
+        if ($session_id) {
             session_id($session_id);
         } else {
             $session_id = session_id();
@@ -113,9 +113,9 @@ class Session
     /**
      * 设置session的值
      * 同样支持.语法
-     * @param [type] $key   键名
-     * @param [type] $value 键值
-     * @return void
+     * @param $key
+     * @param $value
+     * @return bool
      */
     public function set($key, $value)
     {
@@ -169,7 +169,7 @@ class Session
      * 删除键
      *
      * @param [type] $key
-     * @return void
+     * @return bool
      */
     public function delete($key)
     {
@@ -194,7 +194,7 @@ class Session
     /**
      * 销毁当前会话的数据
      *
-     * @return void
+     * @return bool
      */
     public function destroy()
     {
